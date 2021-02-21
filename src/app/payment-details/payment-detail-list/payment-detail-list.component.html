@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Card Owner Name</th>
+            <th scope="col">Card Number</th>
+            <th scope="col">Expiration Date</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pd of service.list">
+            <th scope="row">{{pd.PMId}}</th>
+            <td (click)="populateForm(pd)">{{pd.CardOwnerName}}</td>
+            <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
+            <td (click)="populateForm(pd)">{{pd.ExpirationDate}}</td>
+            <td><i class="far fa-trash-alt fa-lg text-danger" (click)="delete(pd.PMId)"></i></td>
+        </tr>
+    </tbody>
+</table>
